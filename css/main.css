@@ -47,6 +47,15 @@
   height: 40px;
 }
 
+.write-box div{
+  margin: 10px 0px 10px 0px;
+}
+
+.write-box input{
+  width: 600px;
+  height: 40px;
+}
+
 @media screen and (max-width:900px) {
   .main-container h1{
     font-size: smaller;
