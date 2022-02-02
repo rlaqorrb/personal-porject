@@ -14,10 +14,10 @@ MongoClient.connect('mongodb+srv://a12314:rlatpdms0911@cluster0.yxtdl.mongodb.ne
 
     app.post('/add', function(qus, res){
 
-      res.sendFile(__dirname + '/personal-porject/index.html');
+      res.sendFile(__dirname + '/index.html');
 
       
-      db.collection('music').insertOne({제목: qus.body.title, 이름 : qus.body.by, 유튜브 : qus.body.ytn, 링크 : qus.body.ytl, iframe : qus.body.iframe, 가사 : qus.body.lyrics}, function(에러, 결과){
+      db.collection('/personal-porject/music').insertOne({제목: qus.body.title, 이름 : qus.body.by, 유튜브 : qus.body.ytn, 링크 : qus.body.ytl, iframe : qus.body.iframe, 가사 : qus.body.lyrics}, function(에러, 결과){
         console.log('저장완료');
       });
     });
@@ -29,22 +29,22 @@ MongoClient.connect('mongodb+srv://a12314:rlatpdms0911@cluster0.yxtdl.mongodb.ne
 
 
 
-app.get('/', function(qus, res){
-  res.sendFile(__dirname + '/personal-porject/index.html');
+app.get('/personal-porject/', function(qus, res){
+  res.sendFile(__dirname + '/index.html');
 });
 
-app.get('/write', function(qus, res){
+app.get('/personal-porject/write', function(qus, res){
 
-  res.sendFile(__dirname + '/personal-porject/write.html')
+  res.sendFile(__dirname + '/write.html')
 });
 
-app.get('/music', function(qus, res){
+app.get('/personal-porject/music', function(qus, res){
   db.collection('music').find().toArray(function(err, result){
     res.render('music.ejs', {posts : result});
   });
 });
 
-app.get('/css/main.css', function(qus, res){
-  res.sendFile(__dirname + '/personal-porject/css/main.css')
+app.get('/personal-porject/css/main.css', function(qus, res){
+  res.sendFile(__dirname + '/css/main.css')
 })
 
