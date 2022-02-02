@@ -14,7 +14,7 @@ MongoClient.connect('mongodb+srv://a12314:rlatpdms0911@cluster0.yxtdl.mongodb.ne
 
     app.post('/add', function(qus, res){
 
-      res.sendFile(__dirname + '/index.html');
+      res.sendFile(__dirname + '/personal-porject/index.html');
 
       
       db.collection('music').insertOne({제목: qus.body.title, 이름 : qus.body.by, 유튜브 : qus.body.ytn, 링크 : qus.body.ytl, iframe : qus.body.iframe, 가사 : qus.body.lyrics}, function(에러, 결과){
@@ -30,12 +30,12 @@ MongoClient.connect('mongodb+srv://a12314:rlatpdms0911@cluster0.yxtdl.mongodb.ne
 
 
 app.get('/', function(qus, res){
-  res.sendFile(__dirname + '/index.html');
+  res.sendFile(__dirname + '/personal-porject/index.html');
 });
 
 app.get('/write', function(qus, res){
 
-  res.sendFile(__dirname + '/write.html')
+  res.sendFile(__dirname + '/personal-porject/write.html')
 });
 
 app.get('/music', function(qus, res){
@@ -45,6 +45,6 @@ app.get('/music', function(qus, res){
 });
 
 app.get('/css/main.css', function(qus, res){
-  res.sendFile(__dirname + '/css/main.css')
+  res.sendFile(__dirname + '/personal-porject/css/main.css')
 })
 
